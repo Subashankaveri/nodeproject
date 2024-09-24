@@ -1,7 +1,7 @@
 FROM node:20 AS stage1
 WORKDIR /app
 COPY package*.json ./
-RUN npm install --only=production
+RUN npm install
 COPY . .
 FROM gcr.io/distroless/nodejs20-debian12
 WORKDIR /app
